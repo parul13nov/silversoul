@@ -1,0 +1,2244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>SILVERSOUL | 925 Sterling Silver</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+        <style>
+
+        /* =========================================================
+        BASIC
+        ========================================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #faf9f7;
+            color: #202020;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        /* =========================================================
+        HEADER
+        ========================================================= */
+
+        .header {
+
+            height: 72px;
+
+            background: #111;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 5%;
+
+        }
+
+
+        .logo {
+
+            font-size: 25px;
+
+            letter-spacing: 4px;
+
+            font-weight: 600;
+
+        }
+
+
+        .logo-sub {
+
+            font-size: 9px;
+
+            letter-spacing: 3px;
+
+            color: #aaa;
+
+            text-align: center;
+
+            margin-top: 3px;
+
+        }
+
+
+        .header-right {
+
+            display: flex;
+
+            gap: 28px;
+
+            font-size: 13px;
+
+        }
+
+
+        /* =========================================================
+        SILVER RATE BAR
+        ========================================================= */
+
+        .rate-bar {
+
+            background: #eeeeec;
+
+            border-bottom: 1px solid #ddd;
+
+            padding: 11px;
+
+            text-align: center;
+
+            font-size: 13px;
+
+        }
+
+
+        .rate-bar strong {
+
+            font-size: 15px;
+
+        }
+
+
+        .rate-dot {
+
+            width: 7px;
+
+            height: 7px;
+
+            display: inline-block;
+
+            background: #111;
+
+            border-radius: 50%;
+
+            margin-right: 7px;
+
+        }
+
+
+        /* =========================================================
+        MAIN
+        ========================================================= */
+
+        .page {
+
+            max-width: 1450px;
+
+            margin: auto;
+
+            padding: 38px 4% 60px;
+
+        }
+
+
+        /* =========================================================
+        PAGE HEADING
+        ========================================================= */
+
+        .heading {
+
+            text-align: center;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .heading h1 {
+
+            margin: 0;
+
+            font-size: 31px;
+
+            font-weight: 500;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .heading p {
+
+            margin: 10px 0 0;
+
+            color: #777;
+
+            font-size: 14px;
+
+        }
+
+
+        /* =========================================================
+        CATEGORY MENU
+        ========================================================= */
+
+        .category-menu {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 9px;
+
+            margin-bottom: 32px;
+
+        }
+
+
+        .category {
+
+            background: white;
+
+            border: 1px solid #d2d2d2;
+
+            border-radius: 30px;
+
+            padding: 10px 17px;
+
+            font-size: 12px;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+
+            white-space: nowrap;
+
+        }
+
+
+        .category:hover {
+
+            border-color: #111;
+
+        }
+
+
+        .category.active {
+
+            background: #111;
+
+            color: white;
+
+            border-color: #111;
+
+        }
+
+
+        /* =========================================================
+        CONTROLS
+        ========================================================= */
+
+        .controls {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            border-bottom: 1px solid #ddd;
+
+            padding-bottom: 15px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .product-count {
+
+            color: #777;
+
+            font-size: 13px;
+
+        }
+
+
+        .sort {
+
+            background: white;
+
+            border: 1px solid #ccc;
+
+            padding: 9px 13px;
+
+            font-size: 12px;
+
+            cursor: pointer;
+
+        }
+
+
+        /* =========================================================
+        PRODUCT GRID
+        ========================================================= */
+
+        .product-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 24px;
+
+        }
+
+
+        /* =========================================================
+        PRODUCT CARD
+        ========================================================= */
+
+        .product-card {
+
+            background: white;
+
+            transition: 0.25s ease;
+
+            position: relative;
+
+        }
+
+
+        .product-card:hover {
+
+            transform: translateY(-4px);
+
+        }
+
+
+        /* =========================================================
+        IMAGE
+        ========================================================= */
+
+        .image-box {
+
+            position: relative;
+
+            width: 100%;
+
+            aspect-ratio: 1 / 1.08;
+
+            background: #f1f0ed;
+
+            overflow: hidden;
+
+        }
+
+
+        .image-box img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: transform 0.4s ease;
+
+        }
+
+
+        .product-card:hover img {
+
+            transform: scale(1.04);
+
+        }
+
+
+        /* =========================================================
+        BADGE
+        ========================================================= */
+
+        .badge {
+
+            position: absolute;
+
+            top: 10px;
+
+            left: 10px;
+
+            background: #111;
+
+            color: white;
+
+            padding: 6px 9px;
+
+            font-size: 9px;
+
+            letter-spacing: 0.5px;
+
+            z-index: 2;
+
+        }
+
+
+        /* =========================================================
+        WISHLIST
+        ========================================================= */
+
+        .wishlist {
+
+            position: absolute;
+
+            right: 12px;
+
+            top: 10px;
+
+            width: 34px;
+
+            height: 34px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.94);
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 19px;
+
+            cursor: pointer;
+
+            z-index: 3;
+
+        }
+
+
+        /* =========================================================
+        PRODUCT INFO
+        ========================================================= */
+
+        .product-info {
+
+            padding: 14px 4px 18px;
+
+        }
+
+
+        .product-name {
+
+            font-size: 15px;
+
+            font-weight: 500;
+
+            margin-bottom: 6px;
+
+        }
+
+
+        .product-subtitle {
+
+            color: #888;
+
+            font-size: 11px;
+
+            margin-bottom: 11px;
+
+        }
+
+
+        /* =========================================================
+        PRODUCT DETAILS
+        ========================================================= */
+
+        .product-details {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 5px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .detail {
+
+            background: #f5f5f3;
+
+            padding: 6px 8px;
+
+            font-size: 10px;
+
+            color: #777;
+
+        }
+
+
+        .detail strong {
+
+            color: #222;
+
+        }
+
+
+        /* =========================================================
+        PRICE
+        ========================================================= */
+
+        .price-row {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+
+        .price {
+
+            font-size: 18px;
+
+            font-weight: 600;
+
+        }
+
+
+        .view {
+
+            font-size: 11px;
+
+            border-bottom: 1px solid #222;
+
+            cursor: pointer;
+
+        }
+
+
+        /* =========================================================
+        NO PRODUCTS
+        ========================================================= */
+
+        .no-products {
+
+            grid-column: 1 / -1;
+
+            background: white;
+
+            padding: 80px 20px;
+
+            text-align: center;
+
+            color: #777;
+
+        }
+
+
+        /* =========================================================
+        FOOTER
+        ========================================================= */
+
+        .footer {
+
+            background: #111;
+
+            color: #aaa;
+
+            text-align: center;
+
+            padding: 28px 15px;
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .footer strong {
+
+            color: white;
+
+        }
+
+
+        /* =========================================================
+        TABLET
+        ========================================================= */
+
+        @media(max-width:1100px) {
+
+            .product-grid {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+
+            }
+
+        }
+
+
+        /* =========================================================
+        MOBILE
+        ========================================================= */
+
+        @media(max-width:700px) {
+
+            .header {
+
+                height: 62px;
+
+                padding: 0 18px;
+
+            }
+
+
+            .logo {
+
+                font-size: 20px;
+
+            }
+
+
+            .header-right {
+
+                display: none;
+
+            }
+
+
+            .page {
+
+                padding: 28px 13px 45px;
+
+            }
+
+
+            .heading h1 {
+
+                font-size: 24px;
+
+            }
+
+
+            .heading p {
+
+                font-size: 12px;
+
+            }
+
+
+            /*
+            Horizontal scrolling
+            category menu
+            */
+
+            .category-menu {
+
+                justify-content: flex-start;
+
+                flex-wrap: nowrap;
+
+                overflow-x: auto;
+
+                padding-bottom: 7px;
+
+                scrollbar-width: none;
+
+            }
+
+
+            .category-menu::-webkit-scrollbar {
+
+                display: none;
+
+            }
+
+
+            .category {
+
+                flex-shrink: 0;
+
+            }
+
+
+            .product-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 14px;
+
+            }
+
+
+            .product-info {
+
+                padding: 10px 2px 15px;
+
+            }
+
+
+            .product-name {
+
+                font-size: 13px;
+
+            }
+
+
+            .product-subtitle {
+
+                font-size: 10px;
+
+            }
+
+
+            .detail {
+
+                font-size: 9px;
+
+                padding: 5px 6px;
+
+            }
+
+
+            .price {
+
+                font-size: 16px;
+
+            }
+
+
+            .view {
+
+                display: none;
+
+            }
+
+        }
+
+
+        /* =========================================================
+        SMALL MOBILE
+        ========================================================= */
+
+        @media(max-width:380px) {
+
+            .product-grid {
+
+                gap: 10px;
+
+            }
+
+
+            .product-name {
+
+                font-size: 12px;
+
+            }
+
+
+            .price {
+
+                font-size: 15px;
+
+            }
+
+        }
+
+        </style>
+
+    </head>
+
+
+<body>
+
+
+    <!-- =====================================================
+        HEADER
+    ===================================================== -->
+
+    <header class="header">
+
+
+        <div>
+
+            <div class="logo">
+
+                SILVERSOUL
+
+            </div>
+
+
+            <div class="logo-sub">
+
+                925 STERLING SILVER
+
+            </div>
+
+        </div>
+
+
+        <div class="header-right">
+
+            <span>Collections</span>
+
+            <span>New Arrivals</span>
+
+            <span>♡ Wishlist</span>
+
+        </div>
+
+
+    </header>
+
+
+
+        <!-- =====================================================
+            SILVER RATE
+        ===================================================== -->
+
+        <div class="rate-bar">
+
+            <span class="rate-dot"></span>
+
+            Today's Silver Rate:
+
+            <strong>
+
+                ₹<span id="silverRate">0</span>/g
+
+            </strong>
+
+            &nbsp; • &nbsp;
+
+            925 Sterling Silver
+
+        </div>
+
+
+
+        <!-- =====================================================
+            MAIN
+        ===================================================== -->
+
+        <main class="page">
+
+
+                <!-- HEADING -->
+
+                <div class="heading">
+
+                    <h1 id="pageTitle">
+
+                        Silver Jewellery
+
+                    </h1>
+
+
+                    <p id="pageDescription">
+
+                        Discover timeless 925 sterling silver pieces
+
+                    </p>
+
+                </div>
+
+
+
+                    <!-- =================================================
+                        CATEGORY MENU
+                    ================================================= -->
+
+                    <div class="category-menu">
+
+
+                        <div class="category active"
+                            data-type="female_rings">
+
+                            Female Rings
+
+                        </div>
+
+
+                        <div class="category"
+                            data-type="male_rings">
+
+                            Male Rings
+
+                        </div>
+
+
+                        <div class="category"
+                            data-type="band_rings">
+
+                            Band Rings
+
+                        </div>
+
+
+                        <div class="category"
+                            data-type="female_bracelets">
+
+                            Female Bracelets
+
+                        </div>
+
+
+                        <div class="category"
+                            data-type="male_bracelets">
+
+                            Male Bracelets
+
+                        </div>
+
+
+                        <div class="category"
+                            data-type="female_chains">
+
+                            Female Chains
+
+                        </div>
+
+
+                        <div class="category"
+                            data-type="male_chains">
+
+                            Male Chains
+
+                        </div>
+
+
+                        <div class="category"
+                            data-type="pendant_sets">
+
+                            Pendant Sets
+
+                        </div>
+
+
+                        <div class="category"
+                            data-type="anklets">
+
+                            Anklets
+
+                        </div>
+
+
+                        <div class="category"
+                            data-type="gifts">
+
+                            Gifts
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                        CONTROLS
+                    ================================================= -->
+
+                    <div class="controls">
+
+
+                        <div class="product-count">
+
+                            <span id="productCount">0</span>
+
+                            products
+
+                        </div>
+
+
+                        <select class="sort"
+                                id="sortProducts">
+
+                            <option value="featured">
+
+                                Featured
+
+                            </option>
+
+
+                            <option value="low">
+
+                                Price: Low to High
+
+                            </option>
+
+
+                            <option value="high">
+
+                                Price: High to Low
+
+                            </option>
+
+
+                            <option value="weight">
+
+                                Weight: Low to High
+
+                            </option>
+
+                        </select>
+
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                        PRODUCT GRID
+                    ================================================= -->
+
+                    <div class="product-grid"
+                        id="productGrid">
+
+                    </div>
+
+
+        </main>
+
+
+
+    <!-- =====================================================
+        FOOTER
+    ===================================================== -->
+
+    <footer class="footer">
+
+        <strong>SILVERSOUL</strong>
+
+        &nbsp; | &nbsp;
+
+        925 STERLING SILVER
+
+    </footer>
+
+
+
+<script>
+
+const GST_RATE = 3;
+/* =========================================================
+   URL PARAMETERS
+=========================================================
+
+   Example:
+
+   product-list.html
+   ?current_silver=240
+   &product_type=female_rings
+
+========================================================= */
+
+
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+
+/* Silver rate */
+
+let silverRate =
+    parseFloat(
+        params.get("current_silver")
+    );
+
+
+/*
+   If no rate is passed,
+   use 240 as temporary default.
+*/
+
+if (
+    isNaN(silverRate) ||
+    silverRate <= 0
+) {
+
+    silverRate = 240;
+
+}
+
+
+/* Display silver rate */
+
+$("#silverRate").text(
+
+    silverRate.toLocaleString(
+        "en-IN"
+    )
+
+);
+
+
+
+/* =========================================================
+   PRODUCT DATABASE
+=========================================================
+
+   Add your products here.
+
+   type must match one of the categories.
+
+========================================================= */
+
+
+const products = [
+
+    /* =====================================================
+       FEMALE RINGS
+    ===================================================== */
+
+    {
+
+        name:
+            "Aurelia Floral Ring",
+
+        type:
+            "female_rings",
+
+        image:
+            "silversoulImages/FemaleRings/image-1.jpg",
+
+        weight:
+            4.82,
+
+        making:
+            25,
+
+        badge:
+            "NEW"
+
+    },
+
+
+    {
+
+        name:
+            "Celeste CZ Ring",
+
+        type:
+            "female_rings",
+
+        image:
+            "silversoulImages/FemaleRings/female-ring-02.jpg",
+
+        weight:
+            5.36,
+
+        making:
+            28,
+
+        badge:
+            "BESTSELLER"
+
+    },
+
+
+    {
+
+        name:
+            "Luna Elegant Ring",
+
+        type:
+            "female_rings",
+
+        image:
+            "silversoulImages/FemaleRings/female-ring-03.jpg",
+
+        weight:
+            3.95,
+
+        making:
+            30,
+
+        badge:
+            ""
+
+    },
+
+    /* =====================================================
+       MALE RINGS
+    ===================================================== */
+
+    {
+
+        name:
+            "Classic Men's Ring",
+
+        type:
+            "male_rings",
+
+        image:
+            "silversoulImages/MaleRings/male-ring-01.jpg",
+
+        weight:
+            7.80,
+
+        making:
+            20,
+
+        badge:
+            ""
+
+    },
+
+    {
+
+        name:
+            "Imperial Men's Ring",
+
+        type:
+            "male_rings",
+
+        image:
+            "silversoulImages/MaleRings/male-ring-02.jpg",
+
+        weight:
+            9.25,
+
+        making:
+            18,
+
+        badge:
+            "NEW"
+
+    },
+
+    /* =====================================================
+       BAND RINGS
+    ===================================================== */
+
+    {
+
+        name:
+            "Classic Silver Band",
+
+        type:
+            "band_rings",
+
+        image:
+            "silversoulImages/BandRings/band-ring-01.jpg",
+
+        weight:
+            6.50,
+
+        making:
+            20,
+
+        badge:
+            ""
+
+    },
+
+    {
+
+        name:
+            "Premium Silver Band",
+
+        type:
+            "band_rings",
+
+        image:
+            "silversoulImages/BandRings/band-ring-02.jpg",
+
+        weight:
+            8.10,
+
+        making:
+            18,
+
+        badge:
+            "BESTSELLER"
+
+    },
+
+    /* =====================================================
+       FEMALE BRACELETS
+    ===================================================== */
+
+    {
+
+        name:
+            "Serena Silver Bracelet",
+
+        type:
+            "female_bracelets",
+
+        image:
+            "silversoulImages/FemaleBracelets/female-bracelet-01.jpg",
+
+        weight:
+            8.65,
+
+        making:
+            24,
+
+        badge:
+            "NEW"
+
+    },
+
+    {
+
+        name:
+            "Celeste Charm Bracelet",
+
+        type:
+            "female_bracelets",
+
+        image:
+            "silversoulImages/FemaleBracelets/female-bracelet-02.jpg",
+
+        weight:
+            7.80,
+
+        making:
+            25,
+
+        badge:
+            ""
+
+    },
+
+    /* =====================================================
+       MALE BRACELETS
+    ===================================================== */
+
+    {
+
+        name:
+            "Men's Classic Bracelet",
+
+        type:
+            "male_bracelets",
+
+        image:
+            "silversoulImages/MaleBracelets/male-bracelet-01.jpg",
+
+        weight:
+            12.50,
+
+        making:
+            20,
+
+        badge:
+            ""
+
+    },
+
+    {
+
+        name:
+            "Men's Link Bracelet",
+
+        type:
+            "male_bracelets",
+
+        image:
+            "silversoulImages/MaleBracelets/male-bracelet-02.jpg",
+
+        weight:
+            15.20,
+
+        making:
+            18,
+
+        badge:
+            "BESTSELLER"
+
+    },
+
+    /* =====================================================
+       FEMALE CHAINS
+    ===================================================== */
+
+    {
+
+        name:
+            "Aurelia Silver Chain",
+
+        type:
+            "female_chains",
+
+        image:
+            "silversoulImages/FemaleChains/female-chain-01.jpg",
+
+        weight:
+            9.50,
+
+        making:
+            22,
+
+        badge:
+            ""
+
+    },
+
+    {
+
+        name:
+            "Elegant Box Chain",
+
+        type:
+            "female_chains",
+
+        image:
+            "silversoulImages/FemaleChains/female-chain-02.jpg",
+
+        weight:
+            11.20,
+
+        making:
+            20,
+
+        badge:
+            "NEW"
+
+    },
+
+    /* =====================================================
+       MALE CHAINS
+    ===================================================== */
+
+    {
+
+        name:
+            "Men's Classic Chain",
+
+        type:
+            "male_chains",
+
+        image:
+            "silversoulImages/MaleChains/male-chain-01.jpg",
+
+        weight:
+            15.20,
+
+        making:
+            18,
+
+        badge:
+            ""
+
+    },
+
+    {
+
+        name:
+            "Men's Heavy Chain",
+
+        type:
+            "male_chains",
+
+        image:
+            "silversoulImages/MaleChains/male-chain-02.jpg",
+
+        weight:
+            22.50,
+
+        making:
+            17,
+
+        badge:
+            "BESTSELLER"
+
+    },
+
+    /* =====================================================
+       PENDANT SETS
+    ===================================================== */
+
+    {
+
+        name:
+            "Aurelia Pendant Set",
+
+        type:
+            "pendant_sets",
+
+        image:
+            "silversoulImages/PendentSets/pendant-set-01.jpg",
+
+        weight:
+            8.50,
+
+        making:
+            28,
+
+        badge:
+            "NEW"
+
+    },
+
+    {
+
+        name:
+            "Celeste Floral Set",
+
+        type:
+            "pendant_sets",
+
+        image:
+            "silversoulImages/PendentSets/pendant-set-02.jpg",
+
+        weight:
+            10.25,
+
+        making:
+            30,
+
+        badge:
+            "BESTSELLER"
+
+    },
+
+    /* =====================================================
+       ANKLETS
+    ===================================================== */
+
+    {
+
+        name:
+            "Classic Silver Anklet",
+
+        type:
+            "anklets",
+
+        image:
+            "silversoulImages/Anklets/anklet-01.jpg",
+
+        weight:
+            15.50,
+
+        making:
+            18,
+
+        badge:
+            ""
+
+    },
+
+    {
+
+        name:
+            "Elegant Silver Anklet",
+
+        type:
+            "anklets",
+
+        image:
+            "silversoulImages/Anklets/anklet-02.jpg",
+
+        weight:
+            18.25,
+
+        making:
+            17,
+
+        badge:
+            "BESTSELLER"
+
+    },
+
+    /* =====================================================
+       GIFTS
+    ===================================================== */
+
+    {
+
+        name:
+            "Silver Love Gift",
+
+        type:
+            "gifts",
+
+        image:
+            "silversoulImages/Gifts/gift-01.jpg",
+
+        weight:
+            6.20,
+
+        making:
+            25,
+
+        badge:
+            "GIFT"
+
+    },
+
+    {
+
+        name:
+            "Forever Silver Gift",
+
+        type:
+            "gifts",
+
+        image:
+            "silversoulImages/Gifts/gift-02.jpg",
+
+        weight:
+            8.50,
+
+        making:
+            25,
+
+        badge:
+            "GIFT"
+
+    }
+
+];
+
+
+
+/* =========================================================
+   PRICE CALCULATION
+========================================================= */
+
+
+function calculatePrice(product) {
+
+
+    /*
+       Silver value
+    */
+
+    // const silverValue =
+    //     product.weight *
+    //     silverRate;
+
+
+    // /*
+    //    Making charge
+    // */
+
+    // const makingAmount =
+    //     silverValue *
+    //     product.making /
+    //     100;
+    
+        // Silver Making
+      let silverMaking = silverRate + product.making;
+      
+        // Subtotal before GST
+        let subtotal = silverMaking * product.weight;
+        // GST 3%
+        let gstAmount = subtotal * GST_RATE / 100;
+        
+        // Final amount
+        const price = subtotal + gstAmount;
+
+    return Number(price.toFixed(2));
+
+}
+
+
+
+/* =========================================================
+   RUPEE FORMAT
+========================================================= */
+
+
+function rupee(value) {
+
+    return "₹" +
+        value.toLocaleString(
+            "en-IN"
+        );
+
+}
+
+
+
+/* =========================================================
+   DISPLAY PRODUCTS
+========================================================= */
+
+
+function displayProducts(list) {
+
+
+    $("#productGrid").empty();
+
+
+    $("#productCount").text(
+        list.length
+    );
+
+
+    if (list.length === 0) {
+
+
+        $("#productGrid").html(`
+
+            <div class="no-products">
+
+                No products found
+                in this collection.
+
+            </div>
+
+        `);
+
+
+        return;
+
+    }
+
+
+    $.each(
+        list,
+        function(index, product) {
+
+
+            const price =
+                calculatePrice(
+                    product
+                );
+
+
+            const card = `
+
+
+                <div class="product-card">
+
+
+                    <div class="image-box">
+
+
+                        ${
+                            product.badge
+
+                            ?
+
+                            `<div class="badge">
+                                ${product.badge}
+                            </div>`
+
+                            :
+
+                            ""
+                        }
+
+
+                        <div
+                            class="wishlist"
+                            onclick="
+                                toggleWishlist(this)
+                            "
+                        >
+
+                            ♡
+
+                        </div>
+
+
+                        <img
+
+                            src="${product.image}"
+
+                            alt="${product.name}"
+
+                            loading="lazy"
+
+                            onerror="
+                                this.src=
+                                'https://placehold.co/800x850/f1f0ed/777?text=SILVERSOUL'
+                            "
+
+                        >
+
+
+                    </div>
+
+
+
+                    <div class="product-info">
+
+
+                        <div class="product-name">
+
+                            ${product.name}
+
+                        </div>
+
+
+                        <div class="product-subtitle">
+
+                            925 Sterling Silver
+
+                        </div>
+
+
+
+                        <div class="product-details">
+
+
+                            <div class="detail">
+
+                                Weight:
+
+                                <strong>
+
+                                    ${product.weight.toFixed(2)}g
+
+                                </strong>
+
+                            </div>
+
+
+
+                            <div class="detail">
+
+                                Making:
+
+                                <strong>
+
+                                    ${product.making}/g
+
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="price-row">
+
+
+                            <div class="price">
+
+                                ${rupee(price)}
+
+                            </div>
+
+
+                            <div class="view">
+
+                                View Details →
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            `;
+
+
+            $("#productGrid").append(
+                card
+            );
+
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
+   FILTER BY CATEGORY
+========================================================= */
+
+
+function filterProducts(type) {
+
+
+    let filtered =
+        products.filter(
+            function(product) {
+
+                return product.type === type;
+
+            }
+        );
+
+
+    displayProducts(
+        filtered
+    );
+
+
+    /*
+       Change heading
+    */
+
+
+    const categoryNames = {
+
+
+        female_rings:
+            "Female Rings",
+
+
+        male_rings:
+            "Male Rings",
+
+
+        band_rings:
+            "Band Rings",
+
+
+        female_bracelets:
+            "Female Bracelets",
+
+
+        male_bracelets:
+            "Male Bracelets",
+
+
+        female_chains:
+            "Female Chains",
+
+
+        male_chains:
+            "Male Chains",
+
+
+        pendant_sets:
+            "Pendant Sets",
+
+
+        anklets:
+            "Anklets",
+
+
+        gifts:
+            "Gifts"
+
+    };
+
+
+    $("#pageTitle").text(
+
+        categoryNames[type]
+        || "Silver Jewellery"
+
+    );
+
+
+    $("#pageDescription").text(
+
+        "925 sterling silver " +
+        (
+            categoryNames[type]
+            || "jewellery"
+        ).toLowerCase()
+
+    );
+
+}
+
+
+
+/* =========================================================
+   CATEGORY CLICK
+========================================================= */
+
+
+$(".category").click(
+    function() {
+
+
+        $(".category")
+            .removeClass(
+                "active"
+            );
+
+
+        $(this)
+            .addClass(
+                "active"
+            );
+
+
+        const type =
+            $(this).data(
+                "type"
+            );
+
+
+        filterProducts(
+            type
+        );
+
+
+    }
+);
+
+
+
+/* =========================================================
+   SORT PRODUCTS
+========================================================= */
+
+
+$("#sortProducts").change(
+    function() {
+
+
+        const sort =
+            $(this).val();
+
+
+        const activeType =
+            $(".category.active")
+            .data("type");
+
+
+        let sorted =
+            products.filter(
+                function(product) {
+
+                    return (
+                        product.type
+                        ===
+                        activeType
+                    );
+
+                }
+            );
+
+
+        if (
+            sort === "low"
+        ) {
+
+
+            sorted.sort(
+                function(a,b) {
+
+                    return (
+                        calculatePrice(a)
+                        -
+                        calculatePrice(b)
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        if (
+            sort === "high"
+        ) {
+
+
+            sorted.sort(
+                function(a,b) {
+
+                    return (
+                        calculatePrice(b)
+                        -
+                        calculatePrice(a)
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        if (
+            sort === "weight"
+        ) {
+
+
+            sorted.sort(
+                function(a,b) {
+
+                    return (
+                        a.weight
+                        -
+                        b.weight
+                    );
+
+                }
+            );
+
+        }
+
+
+        displayProducts(
+            sorted
+        );
+
+
+    }
+);
+
+
+
+/* =========================================================
+   WISHLIST
+========================================================= */
+
+
+function toggleWishlist(element) {
+
+
+    if (
+        $(element)
+        .text()
+        .trim()
+        ===
+        "♡"
+    ) {
+
+
+        $(element)
+            .text("♥");
+
+
+    } else {
+
+
+        $(element)
+            .text("♡");
+
+
+    }
+
+}
+
+
+
+/* =========================================================
+   URL CATEGORY
+=========================================================
+
+Examples:
+
+product-list.html
+?current_silver=240
+&product_type=female_rings
+
+
+product-list.html
+?current_silver=240
+&product_type=male_bracelets
+
+========================================================= */
+
+
+let urlType =
+    params.get(
+        "product_type"
+    );
+
+
+if (urlType) {
+
+
+    urlType =
+        urlType.toLowerCase();
+
+
+    const category =
+        $(
+            '.category[data-type="' +
+            urlType +
+            '"]'
+        );
+
+
+    if (
+        category.length
+    ) {
+
+
+        $(".category")
+            .removeClass(
+                "active"
+            );
+
+
+        category.addClass(
+            "active"
+        );
+
+
+        filterProducts(
+            urlType
+        );
+
+
+    } else {
+
+
+        /*
+           If invalid category,
+           show first category.
+        */
+
+
+        filterProducts(
+            "female_rings"
+        );
+
+    }
+
+
+} else {
+
+
+    /*
+       Default category
+       when no URL parameter.
+    */
+
+
+    filterProducts(
+        "female_rings"
+    );
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
+```
